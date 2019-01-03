@@ -1,11 +1,12 @@
-package com.rungnueng.com.kotlincalendar
+package com.rungnueng.com.kotlincalendar.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import com.rungnueng.com.kotlincalendar.R
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -32,9 +33,8 @@ class DashboardActivity : AppCompatActivity() {
         // Handle presses on the action bar menu items
         when (item.itemId) {
             R.id.action_add -> {
-                Toast.makeText(this,"a",Toast.LENGTH_LONG).show()
-//                val intent = Intent(this,ShopActivity::class.java)
-//                startActivity(intent)
+                val intent = Intent(this, CalendarActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)

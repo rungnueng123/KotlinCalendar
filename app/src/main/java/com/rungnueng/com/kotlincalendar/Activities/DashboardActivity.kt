@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import com.rungnueng.com.kotlincalendar.Fragments.ShowCourseFragment
 import com.rungnueng.com.kotlincalendar.R
 
 class DashboardActivity : AppCompatActivity() {
@@ -18,6 +19,14 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun initInstance(savedInstanceState: Bundle?) {
+        //Add Fragment
+        if(savedInstanceState == null){
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.container, ShowCourseFragment.newInstance(), "rageComicList")
+                .commit()
+        }
+
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
     }
